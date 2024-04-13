@@ -18,14 +18,14 @@ const InfoSeat = () => {
           <span className="w-6 h-6 bg-green-500 rounded text-transparent mx-2">
             ......
           </span>
-          Ghế đã đặt
+          Ghế đang chọn
         </p>
         <br />
         <p className="text-white text-2xl flex items-center">
           <span className="w-6 h-6 bg-gray-500 rounded text-transparent mx-2">
             ......
           </span>
-          Ghế đã đặt
+          Ghế chưa đặt
         </p>
       </div>
       {/* Table */}

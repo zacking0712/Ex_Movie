@@ -1,15 +1,23 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { dataSeat } from "../../data/dataSeat";
 const initialState = {
-  seat: [],
+  seat: dataSeat,
+  status: "false",
 };
 
 const seatMovie = createSlice({
   name: "seatMovie",
   initialState,
   reducers: {
-    updateSeat(state, action) {
-      state.seat = action.payload;
-      console.log(state.seat);
+    thayDoiTrangThai: (state, action) => {
+      // console.log(action.payload);
+      // console.log(state.seat.danhSachGhe);
+      // console.log(state.status);
+      // state.seat.danhSachGhe.daDat = "true";
+      state.status = true;
+      console.log(state.seat.danhSachGhe);
+      console.log(state.status);
+      console.log(action);
     },
   },
 });
