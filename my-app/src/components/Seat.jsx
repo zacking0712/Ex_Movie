@@ -7,6 +7,7 @@ const Seat = ({ handleClickSeat }) => {
   const dispatch = useDispatch();
   const { seat, status } = useSelector((reducer) => reducer.seatMovie);
   // console.log(dataRedux);
+
   return (
     <div>
       <table className="text-yellow-500 text-3xl">
@@ -23,14 +24,32 @@ const Seat = ({ handleClickSeat }) => {
               return (
                 <tr key={index}>
                   {seat.danhSachGhe.map((item, index) => {
-                    // console.log(index);
-                    // console.log(item);
-                    return (
+                    return !item.daDat ? (
                       <td
                         onClick={() => {
-                          handleClickSeat(seat.hang, item, item.daDat);
+                          dispatch(
+                            thayDoiTrangThai({
+                              hang: seat.hang,
+                              ghe: item,
+                            })
+                          );
                         }}
-                        className="bg-yellow-700 cursor-pointer p-3 text-xl border-2 border-solid border-red-500"
+                        className="bg-yellow-700 cursor-pointer p-3 text-xl border-2 border-solid border-red-500 focus:bg-green-700"
+                        key={index}
+                      >
+                        {item.soGhe}
+                      </td>
+                    ) : (
+                      <td
+                        onClick={() => {
+                          dispatch(
+                            thayDoiTrangThai({
+                              hang: seat.hang,
+                              ghe: item,
+                            })
+                          );
+                        }}
+                        className="bg-green-700 cursor-pointer p-3 text-xl border-2 border-solid border-red-500 focus:bg-green-700"
                         key={index}
                       >
                         {item.soGhe}

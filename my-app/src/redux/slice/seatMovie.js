@@ -10,14 +10,25 @@ const seatMovie = createSlice({
   initialState,
   reducers: {
     thayDoiTrangThai: (state, action) => {
-      // console.log(action.payload);
-      // console.log(state.seat.danhSachGhe);
-      // console.log(state.status);
-      // state.seat.danhSachGhe.daDat = "true";
-      state.status = true;
-      console.log(state.seat.danhSachGhe);
-      console.log(state.status);
-      console.log(action);
+      // Tạo bản sao và thay đổi giá trị cần thiết
+      state.seat = state.seat.map((hangGhe) => {
+        if (action.payload.hang == hangGhe.hang) {
+          return {
+            ...hangGhe,
+            danhSachGhe: hangGhe.danhSachGhe.map((ghe) => {
+              if (ghe.soGhe == action.payload.ghe.soGhe) {
+                return !ghe.daDat
+                  ? { ...ghe, daDat: true }
+                  : { ...ghe, daDat: false };
+              } else {
+                return ghe;
+              }
+            }),
+          };
+        } else {
+          return hangGhe;
+        }
+      });
     },
   },
 });

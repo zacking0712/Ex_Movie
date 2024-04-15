@@ -29,8 +29,8 @@ export const dataSeat = [
       { soGhe: "A8", gia: 75000, daDat: false },
       { soGhe: "A9", gia: 75000, daDat: false },
       { soGhe: "A10", gia: 75000, daDat: false },
-      { soGhe: "A11", gia: 0, daDat: true },
-      { soGhe: "A12", gia: 0, daDat: true },
+      { soGhe: "A11", gia: 0, daDat: false },
+      { soGhe: "A12", gia: 0, daDat: false },
     ],
   },
   {

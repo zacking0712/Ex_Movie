@@ -21,7 +21,7 @@ const Ex_Movie = () => {
     // console.log(arrDSGhe[viTri].daDat);
   };
   return (
-    <div className="movieBooking flex justify-around items-center mt-28">
+    <div className="movieBooking flex justify-around items-start mt-28">
       {/* Seat */}
       <Seat handleClickSeat={handleClickSeat} />
       {/* InfoSeat */}
